@@ -1,4 +1,5 @@
 const http = require('http');
+const url = require('url');
 
 const { getColorForVersion, getVersion } = require('./version');
 
@@ -6,7 +7,8 @@ const port = process.env.PORT || 8888;
 
 function startServer() {
 	const server = http.createServer(async (request, response) => {
-		const [, owner, repo] = request.url.split('/');
+		const { query } = url.parse(request.url, true);
+		const { owner, repo } = query;
 
 		if (!owner) {
 			sendError(response, 'owner name is not specified');
