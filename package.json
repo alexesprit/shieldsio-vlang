@@ -4,7 +4,7 @@
   "description": "A custom endpoint to allow display a version of a V project from project files.",
   "private": true,
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon ./api/index.js"
   },
   "author": "Alexey <alex.esprit@gmail.com>",
   "license": "MIT",
