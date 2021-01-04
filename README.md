@@ -12,10 +12,11 @@ Use the [web application](https://shieldsio-vlang.vercel.app/) to generate a bad
 
 #### URL format
 
-The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vmod/owner/repo`, where
+The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vmod/:owner/:repo/:ref`, where
 
 -   `owner` is your name on GitHub
 -   `repo` is your repository name on GitHub
+-   (optional) `ref` is any valid git ref (branch, commit, or tag)
 
 #### Example
 
@@ -28,10 +29,11 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vmod
 
 #### URL format
 
-The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg/owner/repo`, where
+The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg/:owner/:repo/:ref`, where
 
 -   `owner` is your name on GitHub
 -   `repo` is your repository name on GitHub
+-   (optional) `ref` is any valid git ref (branch, commit, or tag)
 
 #### Example
 

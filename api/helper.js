@@ -10,8 +10,9 @@ function getRepoContextFromUrl(url, endpointName) {
 
 	const owner = paths[startIndex + 0] || null;
 	const repo = paths[startIndex + 1] || null;
+	const branch = paths[startIndex + 2] || null;
 
-	return { owner, repo };
+	return { owner, repo, branch };
 }
 
 function assertRepoContextIsValid(repoContext) {

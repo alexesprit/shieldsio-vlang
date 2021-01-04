@@ -82,10 +82,12 @@ function getResult() {
 		return null;
 	}
 
+	const gitRef = getGitRef();
+
 	const endpoint = getSourceFileEndpoint();
 	const badgeStyle = getBadgeStyle();
 
-	return { owner, repo, endpoint, badgeStyle };
+	return { owner, repo, gitRef, endpoint, badgeStyle };
 }
 
 function getOwner() {
@@ -94,6 +96,10 @@ function getOwner() {
 
 function getRepository() {
 	return getTextFromInput('input-repository');
+}
+
+function getGitRef() {
+	return getTextFromInput('input-git-ref');
 }
 
 function getSourceFileEndpoint() {
@@ -154,12 +160,16 @@ function setPreview(result) {
 /** Helpers */
 
 function getOutputInfo(result) {
-	const { owner, repo, endpoint, badgeStyle } = result;
+	const { owner, repo, gitRef, endpoint, badgeStyle } = result;
 
 	const escapedOwner = encodeURIComponent(owner);
 	const escapedRepo = encodeURIComponent(repo);
+	const escapedGitRef = encodeURIComponent(gitRef);
 
-	const endpointUrl = `${apiUrl}/${endpoint}/${escapedOwner}/${escapedRepo}`;
+	let endpointUrl = `${apiUrl}/${endpoint}/${escapedOwner}/${escapedRepo}`;
+	if (gitRef) {
+		endpointUrl += `/${escapedGitRef}`;
+	}
 	const encodedUrl = encodeURIComponent(endpointUrl);
 
 	const title = 'Project version';
