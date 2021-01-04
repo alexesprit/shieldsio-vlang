@@ -20,7 +20,7 @@ function main() {
 
 function setupEventListeners() {
 	const generateButton = document.getElementById('button-generate');
-	generateButton.addEventListener('click', onGenerateButtonClick);
+	generateButton.addEventListener('click', generateBadge);
 
 	const copyOutputButton = document.getElementById('button-copy');
 	copyOutputButton.addEventListener('click', onCopyOutputButtonClick);
@@ -29,16 +29,11 @@ function setupEventListeners() {
 	for (const radioButton of radioButtons) {
 		radioButton.addEventListener('change', setLastResult);
 	}
-}
 
-function onGenerateButtonClick() {
-	const result = getResult();
-	if (!result) {
-		return;
+	const contextInputs = document.getElementsByName('context-input');
+	for (const contextInput of contextInputs) {
+		contextInput.addEventListener('keyup', onContextInputKeyUp);
 	}
-
-	lastResult = result;
-	setResult(lastResult);
 }
 
 function onCopyOutputButtonClick() {
@@ -47,6 +42,22 @@ function onCopyOutputButtonClick() {
 	outputContainer.select();
 	document.execCommand('copy');
 	outputContainer.blur();
+}
+
+function onContextInputKeyUp({ keyCode }) {
+	if (keyCode === 13) {
+		generateBadge();
+	}
+}
+
+function generateBadge() {
+	const result = getResult();
+	if (!result) {
+		return;
+	}
+
+	lastResult = result;
+	setResult(lastResult);
 }
 
 function getResult() {
