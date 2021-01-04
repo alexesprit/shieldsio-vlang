@@ -1,11 +1,11 @@
-name: Formal
+name: Format
 on:
   push:
     branches: [master]
   pull_request:
     types: [opened, synchronize]
 jobs:
-  lint:
+  format:
     name: Check formatting
     runs-on: ubuntu-latest
     steps:
