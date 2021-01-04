@@ -119,7 +119,7 @@
 				</div>
 			</div>
 
-			<form class="form-horizontal mt-4">
+			<div class="form-horizontal mt-4">
 				<div class="mb-8 text-center" id="badge-preview">
 					<span class="text-muted">
 						Click on "Generate" button to show preview
@@ -129,7 +129,7 @@
 					<div class="col-5 col-sm-12">
 						<label class="form-label">Output format</label>
 					</div>
-					<div class="col-7 col-sm-12">
+					<div class="col-5 col-sm-12">
 						<label class="form-radio form-inline">
 							<input type="radio" name="output-format" checked />
 							<i class="form-icon"></i> Markdown
@@ -139,6 +139,13 @@
 							<i class="form-icon"></i> HTML
 						</label>
 					</div>
+					<div class="col-2 col-sm-12">
+						<div class="text-right">
+							<button class="btn btn-primary" id="button-copy">
+								Copy
+							</button>
+						</div>
+					</div>
 				</div>
 				<div class="form-group">
 					<textarea
@@ -147,7 +154,7 @@
 						rows="4"
 					></textarea>
 				</div>
-			</form>
+			</div>
 
 			<div class="mb-4 text-small mb-4">
 				You may override some configurations for this badge. Check out

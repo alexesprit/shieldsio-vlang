@@ -22,6 +22,9 @@ function setupEventListeners() {
 	const generateButton = document.getElementById('button-generate');
 	generateButton.addEventListener('click', onGenerateButtonClick);
 
+	const copyOutputButton = document.getElementById('button-copy');
+	copyOutputButton.addEventListener('click', onCopyOutputButtonClick);
+
 	const radioButtons = document.getElementsByName('output-format');
 	for (const radioButton of radioButtons) {
 		radioButton.addEventListener('change', setLastResult);
@@ -36,6 +39,14 @@ function onGenerateButtonClick() {
 
 	lastResult = result;
 	setResult(lastResult);
+}
+
+function onCopyOutputButtonClick() {
+	const outputContainer = document.getElementById('output-badge');
+
+	outputContainer.select();
+	document.execCommand('copy');
+	outputContainer.blur();
 }
 
 function getResult() {
