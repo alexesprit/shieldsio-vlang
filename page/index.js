@@ -60,6 +60,10 @@ function onContextInputKeyUp({ keyCode }) {
 }
 
 function generateBadge() {
+	if (!validateInputs()) {
+		return;
+	}
+
 	const result = getResult();
 	if (!result) {
 		return;
@@ -69,16 +73,24 @@ function generateBadge() {
 	setResult(lastResult);
 }
 
-function getResult() {
-	const owner = getOwner();
-	if (!owner) {
-		alert('You should specify your name on GitHub!');
-		return null;
+function validateInputs() {
+	const inputsToValidate = ['input-owner', 'input-repository'];
+	let areAllInputsValid = true;
+
+	for (const inputId of inputsToValidate) {
+		if (!validateInput(inputId, isNotEmpty)) {
+			areAllInputsValid = false;
+		}
 	}
 
+	return areAllInputsValid;
+}
+
+function getResult() {
+	const owner = getOwner();
 	const repo = getRepository();
-	if (!repo) {
-		alert('You should specify your repository name!');
+
+	if (!(owner || repo)) {
 		return null;
 	}
 
@@ -183,6 +195,19 @@ function getTextFromInput(inputId) {
 	return document.getElementById(inputId).value.trim();
 }
 
+function validateInput(inputId, checkFn) {
+	const inputElement = document.getElementById(inputId);
+	const inputValue = inputElement.value;
+
+	const inputHint = inputElement.nextElementSibling;
+	const isValueValid = checkFn(inputValue);
+
+	inputElement.classList.toggle('is-error', !isValueValid);
+	inputHint.hidden = isValueValid;
+
+	return isValueValid;
+}
+
 function getResultFromRadioButtons(radioButtonName, valueArray) {
 	const radioButtons = document.getElementsByName(radioButtonName);
 
@@ -208,6 +233,10 @@ function setTemporalTextContent(el, text, timeout) {
 		el.textContent = previousLabel;
 		el.removeAttribute('data-temporal-label');
 	}, timeout);
+}
+
+function isNotEmpty(input) {
+	return !!input.trim();
 }
 
 main();
