@@ -43,7 +43,7 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg
 > npm install
 
 # Run dev server
-> npm run dev
+> npx vercel dev
 
 # Run linter
 > npm run lint

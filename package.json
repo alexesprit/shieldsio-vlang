@@ -4,7 +4,6 @@
   "description": "A custom endpoint to allow display a version of a V project from project files.",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./api/github/index.js",
     "lint": "eslint \"./api/**/*.js\""
   },
   "author": "Alexey <alex.esprit@gmail.com>",
@@ -17,7 +16,8 @@
     "eslint-config-web-scrobbler": "^2.1.1",
     "nodemon": "^2.0.6",
     "prettier": "^2.2.1",
-    "prettier-config-web-scrobbler": "^0.1.0"
+    "prettier-config-web-scrobbler": "^0.1.0",
+    "vercel": "^21.0.1"
   },
   "eslintConfig": {
     "extends": "web-scrobbler"
