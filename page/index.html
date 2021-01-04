@@ -1,0 +1,169 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>shields.io for V</title>
+
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/spectre.css/dist/spectre.min.css"
+		/>
+	</head>
+	<style>
+		.mt-4 {
+			margin-top: 16px;
+		}
+
+		.mb-4 {
+			margin-bottom: 16px;
+		}
+
+		.px-4 {
+			padding-left: 16px;
+			padding-right: 16px;
+		}
+	</style>
+	<body>
+		<header class="text-center my-2">
+			<div class="container grid-sm">
+				<h1 class="header__title mb-1">shields.io for V</h1>
+				<p class="header__desc">
+					A custom endpoint to allow display a version of a V project
+					from project files
+				</p>
+			</div>
+		</header>
+
+		<main class="container grid-xs px-4">
+			<div class="form-horizontal">
+				<div class="form-group">
+					<div class="col-5 col-sm-12">
+						<label class="form-label" for="input-owner">
+							Your name on GitHub
+						</label>
+					</div>
+					<div class="col-7 col-sm-12">
+						<input
+							class="form-input input-sm"
+							type="text"
+							id="input-owner"
+							placeholder="Username"
+						/>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-5 col-sm-12">
+						<label class="form-label" for="input-repository">
+							Your repository name
+						</label>
+					</div>
+					<div class="col-7 col-sm-12">
+						<input
+							class="form-input input-sm"
+							type="text"
+							id="input-repository"
+							placeholder="Repository"
+						/>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-5 col-sm-12">
+						<label class="form-label">Read version from</label>
+					</div>
+					<div class="col-7 col-sm-12">
+						<label class="form-radio form-inline">
+							<input type="radio" name="project-file" checked />
+							<i class="form-icon"></i> v.mod
+						</label>
+						<label class="form-radio form-inline">
+							<input type="radio" name="project-file" />
+							<i class="form-icon"></i> vpkg.json
+						</label>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="p-centered">
+						<label class="form-radio form-inline">
+							<input type="radio" name="badge-style" />
+							<i class="form-icon"></i> plastic
+						</label>
+						<label class="form-radio form-inline">
+							<input type="radio" name="badge-style" checked />
+							<i class="form-icon"></i> flat
+						</label>
+						<label class="form-radio form-inline">
+							<input type="radio" name="badge-style" />
+							<i class="form-icon"></i> flat-square
+						</label>
+						<label class="form-radio form-inline">
+							<input type="radio" name="badge-style" />
+							<i class="form-icon"></i> for-the-badge
+						</label>
+						<label class="form-radio form-inline">
+							<input type="radio" name="badge-style" />
+							<i class="form-icon"></i> social
+						</label>
+					</div>
+				</div>
+
+				<div class="form-group mt-4">
+					<button
+						class="btn btn-primary p-centered"
+						id="button-generate"
+					>
+						Generate badge
+					</button>
+				</div>
+			</div>
+
+			<form class="form-horizontal mt-4">
+				<div class="mb-8 text-center" id="badge-preview">
+					<span class="text-muted">
+						Click on "Generate" button to show preview
+					</span>
+				</div>
+				<div class="form-group">
+					<div class="col-5 col-sm-12">
+						<label class="form-label">Output format</label>
+					</div>
+					<div class="col-7 col-sm-12">
+						<label class="form-radio form-inline">
+							<input type="radio" name="output-format" checked />
+							<i class="form-icon"></i> Markdown
+						</label>
+						<label class="form-radio form-inline">
+							<input type="radio" name="output-format" />
+							<i class="form-icon"></i> HTML
+						</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<textarea
+						class="form-input input-sm"
+						id="output-badge"
+						rows="4"
+					></textarea>
+				</div>
+			</form>
+
+			<div class="mb-4 text-small mb-4">
+				You may override some configurations for this badge. Check out
+				the
+				<a href="https://shields.io/endpoint">shields.io's Endpoint</a>
+				feature documentation.
+			</div>
+		</main>
+
+		<footer>
+			<div class="text-center">
+				Made with ❤️ by
+				<a href="https://github.com/alexesprit">alexesprit</a>
+			</div>
+		</footer>
+
+		<script src="./index.js" lang="javascript"></script>
+	</body>
+</html>

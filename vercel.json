@@ -3,6 +3,7 @@
     "silent": true
   },
   "routes": [
+    { "src": "/", "dest": "/page/index.html" },
     { "src": "/api/vmod/(.*)", "dest": "/api/vmod/index.js" },
     { "src": "/api/vpkg/(.*)", "dest": "/api/vpkg/index.js" }
   ]
