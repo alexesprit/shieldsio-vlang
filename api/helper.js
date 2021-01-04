@@ -1,6 +1,10 @@
-module.exports = { getContextFromUrl, assertContextIsValid, getResponseObject };
+module.exports = {
+	getRepoContextFromUrl,
+	assertRepoContextIsValid,
+	getResponseObject,
+};
 
-function getContextFromUrl(url, endpointName) {
+function getRepoContextFromUrl(url, endpointName) {
 	const paths = url.split('/').slice(1);
 	const startIndex = paths.indexOf(endpointName) + 1;
 
@@ -10,8 +14,8 @@ function getContextFromUrl(url, endpointName) {
 	return { owner, repo };
 }
 
-function assertContextIsValid(context) {
-	const { owner, repo } = context;
+function assertRepoContextIsValid(repoContext) {
+	const { owner, repo } = repoContext;
 
 	if (!owner) {
 		throw new Error('owner name is not specified');

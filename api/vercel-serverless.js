@@ -1,6 +1,6 @@
 const {
-	getContextFromUrl,
-	assertContextIsValid,
+	getRepoContextFromUrl,
+	assertRepoContextIsValid,
 	getResponseObject,
 } = require('./helper');
 const { getColorForVersion } = require('../src/version');
@@ -9,10 +9,10 @@ module.exports = { createServerlessFunction };
 
 function createServerlessFunction(endpoint, label, getter) {
 	return async (req, res) => {
-		const { owner, repo } = getContextFromUrl(req.url, endpoint);
+		const repoContext = getRepoContextFromUrl(req.url, endpoint);
 
 		try {
-			assertContextIsValid({ owner, repo });
+			assertRepoContextIsValid(repoContext);
 		} catch (err) {
 			res.status(500).json({ error: err.message });
 			return;
@@ -20,7 +20,7 @@ function createServerlessFunction(endpoint, label, getter) {
 
 		let version = null;
 		try {
-			version = await getter(repo, owner);
+			version = await getter(repoContext);
 		} catch (err) {
 			res.status(500).json({ error: err.message });
 			return;

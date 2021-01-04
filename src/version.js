@@ -10,15 +10,15 @@ function getColorForVersion(version) {
 	return isVersionMinor(version) ? 'orange' : 'blue';
 }
 
-async function getVersionFromVpkg(owner, repo) {
-	const vpkgContents = await getFileContents(owner, repo, 'vpkg.json');
+async function getVersionFromVpkg(repoContext) {
+	const vpkgContents = await getFileContents(repoContext, 'vpkg.json');
 	const vpkgObject = JSON.parse(vpkgContents);
 
 	return vpkgObject.version;
 }
 
-async function getVersionFromVmod(owner, repo) {
-	const vmodContents = await getFileContents(owner, repo, 'v.mod');
+async function getVersionFromVmod(repoContext) {
+	const vmodContents = await getFileContents(repoContext, 'v.mod');
 	const matchInfo = vmodContents.match(/version:\s*'(.+?)'/);
 
 	if (matchInfo) {
