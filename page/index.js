@@ -156,11 +156,14 @@ function setPreview(result) {
 function getOutputInfo(result) {
 	const { owner, repo, endpoint, badgeStyle } = result;
 
-	const endpointUrl = `${apiUrl}/${endpoint}/${owner}/${repo}`;
+	const escapedOwner = encodeURIComponent(owner);
+	const escapedRepo = encodeURIComponent(repo);
+
+	const endpointUrl = `${apiUrl}/${endpoint}/${escapedOwner}/${escapedRepo}`;
 	const encodedUrl = encodeURIComponent(endpointUrl);
 
 	const title = 'Project version';
-	const repoUrl = `https://github.com/${owner}/${repo}`;
+	const repoUrl = `https://github.com/${escapedOwner}/${escapedRepo}`;
 	const badgeLink = `https://img.shields.io/endpoint.svg?url=${encodedUrl}&style=${badgeStyle}`;
 
 	return { title, repoUrl, badgeLink };
