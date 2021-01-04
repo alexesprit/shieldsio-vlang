@@ -4,6 +4,10 @@ A custom endpoint to allow display a version of a V project from project files.
 
 ## Usage
 
+Use the [web application](https://shieldsio-vlang.vercel.app/) to generate a badge for your project.
+
+## API
+
 ### Read version from v.mod file
 
 #### URL format
