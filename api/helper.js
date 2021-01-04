@@ -28,5 +28,6 @@ function getResponseObject(label, version, color) {
 		color: color,
 		label: label,
 		message: version,
+		cacheSeconds: 3600,
 	};
 }
