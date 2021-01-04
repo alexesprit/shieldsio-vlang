@@ -180,7 +180,7 @@ function getOutputInfo(result) {
 }
 
 function getTextFromInput(inputId) {
-	return document.getElementById(inputId).value;
+	return document.getElementById(inputId).value.trim();
 }
 
 function getResultFromRadioButtons(radioButtonName, valueArray) {
