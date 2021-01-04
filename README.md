@@ -57,7 +57,7 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg
 
 This project is inspired by [endel/shieldsio-patreon](https://github.com/endel/shieldsio-patreon) and uses some ideas (e.g. the web app for generating badges) from that project.
 
-The web application uses [picturepan2/spectre](https://github.com/picturepan2/spectre) for building UI [tholman/github-corners](https://github.com/tholman/github-corners) for displaying a GitHub corner.
+The web application uses [picturepan2/spectre](https://github.com/picturepan2/spectre) for building UI and [tholman/github-corners](https://github.com/tholman/github-corners) for displaying a GitHub corner.
 
 ## License
 
