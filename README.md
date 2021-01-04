@@ -49,6 +49,10 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg
 > npm run lint
 ```
 
+## Credits
+
+This project is inspired by [endel/shieldsio-patreon](https://github.com/endel/shieldsio-patreon) and uses some ideas (e.g. the web app for generating badges) from that project.
+
 ## License
 
 Licensed under the [MIT License](LICENSE.md).
