@@ -16,7 +16,7 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vmod
 #### Example
 
 -   Endpoint URL: `https://shieldsio-vlang.vercel.app/api/vmod/vlang/v`
--   Badge image URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fgithub%2Falexesprit%2Fcolors`
+-   Badge image URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Fvlang%2Fv`
 
 ![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Fvlang%2Fv)
 
@@ -31,10 +31,10 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg
 
 #### Example
 
--   Endpoint URL: `https://shieldsio-vlang.vercel.app/api/vmod/alexesprit/colors`
--   Badge image URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Falexesprit%2Fcolors`
+-   Endpoint URL: `https://shieldsio-vlang.vercel.app/api/vpkg/alexesprit/colors`
+-   Badge image URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvpkg%2Falexesprit%2Fcolors`
 
-![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Falexesprit%2Fcolors)
+![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvpkg%2Falexesprit%2Fcolors)
 
 ## Development
 
