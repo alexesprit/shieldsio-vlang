@@ -61,6 +61,8 @@ This project is inspired by [endel/shieldsio-patreon](https://github.com/endel/s
 
 The web application uses [picturepan2/spectre](https://github.com/picturepan2/spectre) for building UI and [tholman/github-corners](https://github.com/tholman/github-corners) for displaying a GitHub corner.
 
+The social media preview was created with using [Bootstrap's](https://icons.getbootstrap.com/icons/shield/) `shield` icon and [V's](https://github.com/vlang/v-logo) logo.
+
 ## License
 
 Licensed under the [MIT License](LICENSE.md).
