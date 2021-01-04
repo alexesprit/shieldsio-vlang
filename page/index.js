@@ -176,11 +176,10 @@ function getOutputInfo(result) {
 
 	const escapedOwner = encodeURIComponent(owner);
 	const escapedRepo = encodeURIComponent(repo);
-	const escapedGitRef = encodeURIComponent(gitRef);
 
-	let endpointUrl = `${apiUrl}/${endpoint}/${escapedOwner}/${escapedRepo}`;
+	let endpointUrl = `${apiUrl}/${endpoint}/${owner}/${repo}`;
 	if (gitRef) {
-		endpointUrl += `/${escapedGitRef}`;
+		endpointUrl += `/${gitRef}`;
 	}
 	const encodedUrl = encodeURIComponent(endpointUrl);
 
