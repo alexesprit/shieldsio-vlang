@@ -4,7 +4,8 @@
   "description": "A custom endpoint to allow display a version of a V project from project files.",
   "private": true,
   "scripts": {
-    "lint": "eslint \"./{api,page,src}/**/*.js\""
+    "lint": "eslint \"./{api,page,src}/**/*.js\"",
+    "format": "prettier --write ."
   },
   "author": "Alexey <alex.esprit@gmail.com>",
   "license": "MIT",
