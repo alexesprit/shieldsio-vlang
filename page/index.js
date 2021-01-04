@@ -10,6 +10,8 @@ const badgeStyles = [
 	'social',
 ];
 
+const restoreCopyButtonLabelTimeout = 2000;
+
 const apiUrl = 'https://shieldsio-vlang.vercel.app/api';
 
 let lastResult = null;
@@ -42,6 +44,13 @@ function onCopyOutputButtonClick() {
 	outputContainer.select();
 	document.execCommand('copy');
 	outputContainer.blur();
+
+	const copyOutputButton = document.getElementById('button-copy');
+	setTemporalTextContent(
+		copyOutputButton,
+		'Copied!',
+		restoreCopyButtonLabelTimeout
+	);
 }
 
 function onContextInputKeyUp({ keyCode }) {
@@ -171,6 +180,21 @@ function getResultFromRadioButtons(radioButtonName, valueArray) {
 	}
 
 	throw new Error('Unexpected error');
+}
+
+function setTemporalTextContent(el, text, timeout) {
+	if (el.getAttribute('data-temporal-label')) {
+		return;
+	}
+
+	const previousLabel = el.textContent;
+	el.textContent = text;
+	el.setAttribute('data-temporal-label', true);
+
+	setTimeout(() => {
+		el.textContent = previousLabel;
+		el.removeAttribute('data-temporal-label');
+	}, timeout);
 }
 
 main();
