@@ -1,5 +1,9 @@
 {
   "github": {
     "silent": true
-  }
+  },
+  "routes": [
+    { "src": "/api/vmod/(.*)", "dest": "/api/vmod/index.js" },
+    { "src": "/api/vpkg/(.*)", "dest": "/api/vpkg/index.js" }
+  ]
 }

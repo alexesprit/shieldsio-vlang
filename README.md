@@ -4,19 +4,37 @@ A custom endpoint to allow display a version of a V project from project files.
 
 ## Usage
 
-### URL format
+### Read version from v.mod file
 
-The format of URL is the following: `https://shieldsio-vlang.vercel.app/api?owner={OWNER}&repo={REPO}`, where
+#### URL format
 
--   `OWNER` is your name on GitHub
--   `REPO` is your repository name on GitHub
+The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vmod/owner/repo`, where
 
-### Example
+-   `owner` is your name on GitHub
+-   `repo` is your repository name on GitHub
 
--   Endpoint URL: `https://shieldsio-vlang.vercel.app/api?owner=alexesprit&repo=colors`
--   Badge image URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%3Fowner%3Dalexesprit%26repo%3Dcolors`
+#### Example
 
-![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%3Fowner%3Dalexesprit%26repo%3Dcolors)
+-   Endpoint URL: `https://shieldsio-vlang.vercel.app/api/vmod/vlang/v`
+-   Badge image URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fgithub%2Falexesprit%2Fcolors`
+
+![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Fvlang%2Fv)
+
+### Read version from vpkg.json file
+
+#### URL format
+
+The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg/owner/repo`, where
+
+-   `owner` is your name on GitHub
+-   `repo` is your repository name on GitHub
+
+#### Example
+
+-   Endpoint URL: `https://shieldsio-vlang.vercel.app/api/vmod/alexesprit/colors`
+-   Badge image URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Falexesprit%2Fcolors`
+
+![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Falexesprit%2Fcolors)
 
 ## Development
 
