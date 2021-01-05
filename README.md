@@ -68,4 +68,4 @@ The social media preview was created with using [Bootstrap's](https://icons.getb
 
 ## License
 
-Licensed under the [MIT License](LICENSE.md).
+Licensed under the [MIT License](LICENSE).
