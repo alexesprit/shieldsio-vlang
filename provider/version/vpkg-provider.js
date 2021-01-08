@@ -2,7 +2,7 @@ module.exports = {
 	getVersionFromVpkg,
 };
 
-function getVersionFromVpkg(repoContext, fileContents) {
+function getVersionFromVpkg(fileContents) {
 	let vpkgObject = null;
 
 	try {

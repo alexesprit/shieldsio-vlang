@@ -2,7 +2,7 @@ module.exports = {
 	getVersionFromVmod,
 };
 
-function getVersionFromVmod(repoContext, fileContents) {
+function getVersionFromVmod(fileContents) {
 	const matchInfo = fileContents.match(/version:\s*'(.+?)'/);
 
 	if (matchInfo) {
