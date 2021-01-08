@@ -4,7 +4,7 @@ const {
 	createSuccessResponse,
 } = require('./response-factory');
 
-async function processApiRequest(url, label, getter) {
+async function processApiRequest(url, label, versionProvider) {
 	const repoContext = getRepoContextFromUrl(url);
 
 	try {
@@ -15,7 +15,7 @@ async function processApiRequest(url, label, getter) {
 
 	let version = null;
 	try {
-		version = await getter(repoContext);
+		version = await versionProvider(repoContext);
 	} catch (err) {
 		return createErrorResponse(err);
 	}
