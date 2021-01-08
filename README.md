@@ -12,7 +12,7 @@ Use the [web application](https://shieldsio-vlang.vercel.app/) to generate a bad
 
 #### URL format
 
-The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vmod/:owner/:repo/:ref`, where
+The request format is the following: `/api/vmod/:owner/:repo/:ref`, where
 
 -   `owner` is your name on GitHub
 -   `repo` is your repository name on GitHub
@@ -20,7 +20,7 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vmod
 
 #### Example
 
--   Endpoint URL: `https://shieldsio-vlang.vercel.app/api/vmod/vlang/v`
+-   Request URL: `https://shieldsio-vlang.vercel.app/api/vmod/vlang/v`
 -   Badge image URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Fvlang%2Fv`
 
 ![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Fvlang%2Fv)
@@ -29,7 +29,7 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vmod
 
 #### URL format
 
-The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg/:owner/:repo/:ref`, where
+The request format is the following: `/api/vpkg/:owner/:repo/:ref`, where
 
 -   `owner` is your name on GitHub
 -   `repo` is your repository name on GitHub
@@ -37,7 +37,7 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg
 
 #### Example
 
--   Endpoint URL: `https://shieldsio-vlang.vercel.app/api/vpkg/alexesprit/colors`
+-   Request URL: `https://shieldsio-vlang.vercel.app/api/vpkg/alexesprit/colors`
 -   Badge image URL: `https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvpkg%2Falexesprit%2Fcolors`
 
 ![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvpkg%2Falexesprit%2Fcolors)
