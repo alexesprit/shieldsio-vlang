@@ -16,9 +16,9 @@ function createErrorResponse(err) {
 }
 
 function getColorForVersion(version) {
-	return isVersionMinor(version) ? 'orange' : 'blue';
+	return isVersionV0(version) ? 'orange' : 'blue';
 }
 
-function isVersionMinor(version) {
+function isVersionV0(version) {
 	return version.startsWith('0.') || version.startsWith('v0.');
 }
