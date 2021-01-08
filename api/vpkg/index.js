@@ -1,6 +1,8 @@
-const {
-	getVersionFromVpkg,
-} = require('../../src/provider/version/vpkg-provider');
-const { createServerlessFunction } = require('../vercel-serverless');
+const { createServerlessFunction } = require('../serverless-function-factory');
+const { createVmodVersionGetter } = require('../version-getter-factory');
 
-module.exports = createServerlessFunction('vpkg', 'vpkg', getVersionFromVpkg);
+module.exports = createServerlessFunction(
+	'vpkg',
+	'vpkg',
+	createVmodVersionGetter()
+);

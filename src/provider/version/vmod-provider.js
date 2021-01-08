@@ -1,11 +1,9 @@
-const { getFileContents } = require('../contents/github');
-
 module.exports = {
 	getVersionFromVmod,
 };
 
-async function getVersionFromVmod(repoContext) {
-	const vmodContents = await getFileContents(repoContext, 'v.mod');
+async function getVersionFromVmod(repoContext, fileContentsProvider) {
+	const vmodContents = await fileContentsProvider(repoContext, 'v.mod');
 	const matchInfo = vmodContents.match(/version:\s*'(.+?)'/);
 
 	if (matchInfo) {
