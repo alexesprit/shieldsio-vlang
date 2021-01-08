@@ -54,6 +54,9 @@ The format of URL is the following: `https://shieldsio-vlang.vercel.app/api/vpkg
 # Run linter
 > npm run lint
 
+# Run tests
+> npm test
+
 # Format files
 > npm run format
 ```

@@ -1,0 +1,5 @@
+Module {
+    name: 'Dummy'
+    version: '0.1.0'
+	description: 'Dummy module'
+}
