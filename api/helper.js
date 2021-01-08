@@ -6,9 +6,9 @@ module.exports = {
 function getRepoContextFromUrl(url) {
 	// Format is /api/:provider/:owner/:repo
 	const paths = url.split('/').slice(3);
-	const [owner = null, repo = null, branch = null] = paths;
+	const [owner = null, repo = null, ref = null] = paths;
 
-	return { owner, repo, branch };
+	return { owner, repo, ref };
 }
 
 function assertRepoContextIsValid(repoContext) {

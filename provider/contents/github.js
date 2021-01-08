@@ -6,12 +6,12 @@ const octokit = new Octokit({ auth: githubToken });
 module.exports = { getFileContents };
 
 async function getFileContents(repoContext, fileName) {
-	const { owner, repo, branch } = repoContext;
+	const { owner, repo, ref } = repoContext;
 
 	const { data } = await octokit.repos.getContent({
 		owner: owner,
 		repo: repo,
-		ref: branch || undefined,
+		ref: ref || undefined,
 
 		path: fileName,
 	});
