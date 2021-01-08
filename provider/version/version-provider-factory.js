@@ -1,6 +1,6 @@
-const { getFileContents } = require('../provider/contents/github');
-const { getVersionFromVmod } = require('../provider/version/vmod-provider');
-const { getVersionFromVpkg } = require('../provider/version/vpkg-provider');
+const { getFileContents } = require('../contents/github');
+const { getVersionFromVmod } = require('./vmod-provider');
+const { getVersionFromVpkg } = require('./vpkg-provider');
 
 module.exports = { createVmodVersionGetter, createVpkgVersionGetter };
 
