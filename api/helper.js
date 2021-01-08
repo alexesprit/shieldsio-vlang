@@ -1,6 +1,7 @@
 module.exports = {
 	getRepoContextFromUrl,
 	assertRepoContextIsValid,
+	getErrorObject,
 	getResponseObject,
 };
 
@@ -35,6 +36,11 @@ function getResponseObject(label, version) {
 		message: version,
 		cacheSeconds: 3600,
 	};
+}
+
+function getErrorObject(err) {
+	const message = err instanceof Error ? err.message : err;
+	return { error: message };
 }
 
 function getColorForVersion(version) {
