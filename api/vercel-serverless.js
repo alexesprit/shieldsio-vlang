@@ -1,8 +1,8 @@
 const {
 	getRepoContextFromUrl,
 	assertRepoContextIsValid,
-	getErrorObject,
-	getResponseObject,
+	createErrorResponse,
+	createSuccessResponse,
 } = require('./helper');
 
 module.exports = { createServerlessFunction };
@@ -27,15 +27,15 @@ async function processApiRequest(url, endpoint, label, getter) {
 	try {
 		assertRepoContextIsValid(repoContext);
 	} catch (err) {
-		return getErrorObject(err);
+		return createErrorResponse(err);
 	}
 
 	let version = null;
 	try {
 		version = await getter(repoContext);
 	} catch (err) {
-		return getErrorObject(err);
+		return createErrorResponse(err);
 	}
 
-	return getResponseObject(label, version);
+	return createSuccessResponse(label, version);
 }

@@ -1,8 +1,8 @@
 module.exports = {
 	getRepoContextFromUrl,
 	assertRepoContextIsValid,
-	getErrorObject,
-	getResponseObject,
+	createErrorResponse,
+	createSuccessResponse,
 };
 
 function getRepoContextFromUrl(url, endpointName) {
@@ -28,7 +28,7 @@ function assertRepoContextIsValid(repoContext) {
 	}
 }
 
-function getResponseObject(label, version) {
+function createSuccessResponse(label, version) {
 	return {
 		schemaVersion: 1,
 		color: getColorForVersion(version),
@@ -38,7 +38,7 @@ function getResponseObject(label, version) {
 	};
 }
 
-function getErrorObject(err) {
+function createErrorResponse(err) {
 	const message = err instanceof Error ? err.message : err;
 	return { error: message };
 }
