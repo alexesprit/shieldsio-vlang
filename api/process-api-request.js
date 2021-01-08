@@ -1,9 +1,8 @@
+const { getRepoContextFromUrl, assertRepoContextIsValid } = require('./helper');
 const {
-	getRepoContextFromUrl,
-	assertRepoContextIsValid,
 	createErrorResponse,
 	createSuccessResponse,
-} = require('./helper');
+} = require('./response-factory');
 
 async function processApiRequest(url, label, getter) {
 	const repoContext = getRepoContextFromUrl(url);
