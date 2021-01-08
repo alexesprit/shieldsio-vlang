@@ -1,6 +1,6 @@
 const {
 	getVersionFromVmod,
-} = require('../../../src/provider/version/vmod-provider');
+} = require('../../../provider/version/vmod-provider');
 const { getFixtureContents } = require('../../contents-provider');
 
 const dummyRepoContext = null;

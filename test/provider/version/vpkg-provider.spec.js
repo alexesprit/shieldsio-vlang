@@ -1,6 +1,6 @@
 const {
 	getVersionFromVpkg,
-} = require('../../../src/provider/version/vpkg-provider');
+} = require('../../../provider/version/vpkg-provider');
 const { getFixtureContents } = require('../../contents-provider');
 const dummyRepoContext = null;
 
