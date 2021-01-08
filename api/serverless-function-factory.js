@@ -7,22 +7,17 @@ const {
 
 module.exports = { createServerlessFunction };
 
-function createServerlessFunction(endpoint, label, getter) {
+function createServerlessFunction(label, getter) {
 	return async (req, res) => {
-		const response = await processApiRequest(
-			req.url,
-			endpoint,
-			label,
-			getter
-		);
+		const response = await processApiRequest(req.url, label, getter);
 
 		const statusCode = response.error ? 500 : 200;
 		res.status(statusCode).json(response);
 	};
 }
 
-async function processApiRequest(url, endpoint, label, getter) {
-	const repoContext = getRepoContextFromUrl(url, endpoint);
+async function processApiRequest(url, label, getter) {
+	const repoContext = getRepoContextFromUrl(url);
 
 	try {
 		assertRepoContextIsValid(repoContext);

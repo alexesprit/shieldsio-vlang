@@ -5,13 +5,10 @@ module.exports = {
 	createSuccessResponse,
 };
 
-function getRepoContextFromUrl(url, endpointName) {
-	const paths = url.split('/').slice(1);
-	const startIndex = paths.indexOf(endpointName) + 1;
-
-	const owner = paths[startIndex + 0] || null;
-	const repo = paths[startIndex + 1] || null;
-	const branch = paths[startIndex + 2] || null;
+function getRepoContextFromUrl(url) {
+	// Format is /api/:provider/:owner/:repo
+	const paths = url.split('/').slice(3);
+	const [owner = null, repo = null, branch = null] = paths;
 
 	return { owner, repo, branch };
 }
