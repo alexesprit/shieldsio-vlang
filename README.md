@@ -8,11 +8,11 @@ Use the [web application](https://shieldsio-vlang.vercel.app/) to generate a bad
 
 ## API
 
-### Read version from v.mod file
+### Get version from v.mod file
 
-#### URL format
+`GET /api/vmod/:owner/:repo/:ref`
 
-The request format is the following: `/api/vmod/:owner/:repo/:ref`, where
+#### Parameters
 
 -   `owner` is your name on GitHub
 -   `repo` is your repository name on GitHub
@@ -25,11 +25,11 @@ The request format is the following: `/api/vmod/:owner/:repo/:ref`, where
 
 ![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fshieldsio-vlang.vercel.app%2Fapi%2Fvmod%2Fvlang%2Fv)
 
-### Read version from vpkg.json file
+### Get version from vpkg.json file
 
-#### URL format
+`GET /api/vpkg/:owner/:repo/:ref`
 
-The request format is the following: `/api/vpkg/:owner/:repo/:ref`, where
+#### Parameters
 
 -   `owner` is your name on GitHub
 -   `repo` is your repository name on GitHub
