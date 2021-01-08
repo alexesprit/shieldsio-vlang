@@ -2,9 +2,8 @@ module.exports = {
 	getVersionFromVmod,
 };
 
-async function getVersionFromVmod(repoContext, fileContentsProvider) {
-	const vmodContents = await fileContentsProvider(repoContext, 'v.mod');
-	const matchInfo = vmodContents.match(/version:\s*'(.+?)'/);
+function getVersionFromVmod(repoContext, fileContents) {
+	const matchInfo = fileContents.match(/version:\s*'(.+?)'/);
 
 	if (matchInfo) {
 		return matchInfo[1];

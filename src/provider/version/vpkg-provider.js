@@ -2,9 +2,8 @@ module.exports = {
 	getVersionFromVpkg,
 };
 
-async function getVersionFromVpkg(repoContext, fileContentsProvider) {
-	const vpkgContents = await fileContentsProvider(repoContext, 'vpkg.json');
-	const vpkgObject = JSON.parse(vpkgContents);
+function getVersionFromVpkg(repoContext, fileContents) {
+	const vpkgObject = JSON.parse(fileContents);
 
 	return vpkgObject.version;
 }
