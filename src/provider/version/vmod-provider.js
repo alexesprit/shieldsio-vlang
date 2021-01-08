@@ -1,16 +1,8 @@
-const { getFileContents } = require('./provider/github');
+const { getFileContents } = require('../contents/github');
 
 module.exports = {
-	getVersionFromVpkg,
 	getVersionFromVmod,
 };
-
-async function getVersionFromVpkg(repoContext) {
-	const vpkgContents = await getFileContents(repoContext, 'vpkg.json');
-	const vpkgObject = JSON.parse(vpkgContents);
-
-	return vpkgObject.version;
-}
 
 async function getVersionFromVmod(repoContext) {
 	const vmodContents = await getFileContents(repoContext, 'v.mod');
