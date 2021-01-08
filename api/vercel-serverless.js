@@ -3,7 +3,6 @@ const {
 	assertRepoContextIsValid,
 	getResponseObject,
 } = require('./helper');
-const { getColorForVersion } = require('../src/version');
 
 module.exports = { createServerlessFunction };
 
@@ -25,8 +24,7 @@ function createServerlessFunction(endpoint, label, getter) {
 			res.status(500).json({ error: err.message });
 			return;
 		}
-		const color = getColorForVersion(version);
 
-		res.json(getResponseObject(label, version, color));
+		res.json(getResponseObject(label, version));
 	};
 }

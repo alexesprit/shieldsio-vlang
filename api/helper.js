@@ -27,12 +27,20 @@ function assertRepoContextIsValid(repoContext) {
 	}
 }
 
-function getResponseObject(label, version, color) {
+function getResponseObject(label, version) {
 	return {
 		schemaVersion: 1,
-		color: color,
+		color: getColorForVersion(version),
 		label: label,
 		message: version,
 		cacheSeconds: 3600,
 	};
+}
+
+function getColorForVersion(version) {
+	return isVersionMinor(version) ? 'orange' : 'blue';
+}
+
+function isVersionMinor(version) {
+	return version.startsWith('0.') || version.startsWith('v0.');
 }

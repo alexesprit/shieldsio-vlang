@@ -3,12 +3,7 @@ const { getFileContents } = require('./provider/github');
 module.exports = {
 	getVersionFromVpkg,
 	getVersionFromVmod,
-	getColorForVersion,
 };
-
-function getColorForVersion(version) {
-	return isVersionMinor(version) ? 'orange' : 'blue';
-}
 
 async function getVersionFromVpkg(repoContext) {
 	const vpkgContents = await getFileContents(repoContext, 'vpkg.json');
@@ -26,8 +21,4 @@ async function getVersionFromVmod(repoContext) {
 	}
 
 	return null;
-}
-
-function isVersionMinor(version) {
-	return version.startsWith('0.') || version.startsWith('v0.');
 }
