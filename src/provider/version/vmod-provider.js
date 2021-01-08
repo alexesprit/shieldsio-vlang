@@ -9,5 +9,5 @@ function getVersionFromVmod(repoContext, fileContents) {
 		return matchInfo[1];
 	}
 
-	return null;
+	throw new Error('v.mod file does not contain version info');
 }
