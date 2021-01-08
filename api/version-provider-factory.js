@@ -5,20 +5,16 @@ const { getVersionFromVpkg } = require('../provider/version/vpkg-provider');
 module.exports = { createVmodVersionGetter, createVpkgVersionGetter };
 
 function createVmodVersionGetter() {
-	return createVersionGetter(getVersionFromVmod, (context) =>
-		getFileContents(context, 'v.mod')
-	);
+	return createFileVersionProvider(getVersionFromVmod, 'v.mod');
 }
 
 function createVpkgVersionGetter() {
-	return createVersionGetter(getVersionFromVpkg, (context) =>
-		getFileContents(context, 'vpkg.json')
-	);
+	return createFileVersionProvider(getVersionFromVpkg, 'vpkg.json');
 }
 
-function createVersionGetter(versionProvider, fileContentsProvider) {
-	return async (...args) => {
-		const fileContents = await fileContentsProvider(...args);
+function createFileVersionProvider(versionProvider, fileName) {
+	return async (context) => {
+		const fileContents = await getFileContents(context, fileName);
 		return versionProvider(fileContents);
 	};
 }
